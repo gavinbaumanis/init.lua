@@ -8,13 +8,13 @@ return {
                 lsp_format = "fallback",
 			},
 			formatters_by_ft = {
-				c = { "clang-format" },
-				cpp = { "clang-format" },
+				--c = { "clang-format" },
+				--cpp = { "clang-format" },
 				lua = { "stylua" },
-				go = { "gofmt" },
+				--go = { "gofmt" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
-				elixir = { "mix" },
+				-- elixir = { "mix" },
 			},
 			formatters = {
 				["clang-format"] = {

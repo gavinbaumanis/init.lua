@@ -75,6 +75,19 @@ autocmd('LspAttach', {
     end
 })
 
+-- Do not hide .env file values
+autocmd({ "BufEnter", "BufWinEnter" }, {
+    group = GavinBaumanisGroup,
+    pattern = { ".env", ".env.*" },
+    callback = function()
+        local ok, cloak = pcall(require, "cloak")
+        if ok and cloak and cloak.disable then
+            cloak.disable()
+        end
+    end,
+})
+
+
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
